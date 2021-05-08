@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  cursor: none;
+  background: #1b1b1b;
+}
+
+.cursor {
+  width: 20px;
+  height: 20px;
+  border: 1px solid white;
+  border-radius: 50%;
+  position: absolute;
+  -webkit-transition-duration: 200ms;
+          transition-duration: 200ms;
+  -webkit-transition-timing-function: ease-out;
+          transition-timing-function: ease-out;
+  -webkit-animation: cursorAnim 0.5s alternate infinite;
+          animation: cursorAnim 0.5s alternate infinite;
+  /* 
+        ease: bat dau cham sau do nhanh ket thuc cham
+        ease-in: bat dau cham
+        ease-out: ket thuc cham
+        ease-in-out: bat dau va ket thuc cham
+    */
+}
+
+.cursor::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  border: 8px solid gray;
+  border-radius: 50%;
+  opacity: 0.5;
+  top: -8px;
+  left: -9px;
+  -webkit-animation: cursorAnim2 0.5s alternate infinite;
+          animation: cursorAnim2 0.5s alternate infinite;
+}
+
+@-webkit-keyframes cursorAnim {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7);
+  }
+}
+
+@keyframes cursorAnim {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7);
+  }
+}
+
+@-webkit-keyframes cursorAnim2 {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(0.4);
+            transform: scale(0.4);
+  }
+}
+
+@keyframes cursorAnim2 {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(0.4);
+            transform: scale(0.4);
+  }
+}
+
+@-webkit-keyframes cursorAnim3 {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(3);
+            transform: scale(3);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes cursorAnim3 {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(3);
+            transform: scale(3);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 0;
+  }
+}
+
+.expand {
+  -webkit-animation: cursorAnim3 0.5s alternate infinite;
+          animation: cursorAnim3 0.5s alternate infinite;
+  border: 1px solid red;
+}
+/*# sourceMappingURL=style.css.map */

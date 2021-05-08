@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    cursor: none;
+    background: rgb(27, 27,27);
+}
+
+.cursor { 
+    //với hanoicomputer thi class cursor này là thẻ div pseudo for info
+    //idea: khi hover vào ảnh product thì mới hiện div này vd: .product__img .curcor { ... }
+    // ko hover vào sản phẩm thì none
+    width: 20px;
+    height: 20px;
+    border: 1px solid white;
+    border-radius: 50%;
+    position: absolute;
+    transition-duration: 200ms; 
+    transition-timing-function: ease-out;
+    animation: cursorAnim 0.5s alternate infinite;//bỏ animation đi cursor sẽ bớt chậm hơn
+
+    /* 
+        ease: bat dau cham sau do nhanh ket thuc cham
+        ease-in: bat dau cham
+        ease-out: ket thuc cham
+        ease-in-out: bat dau va ket thuc cham
+    */
+}
+
+.cursor::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    border: 8px solid gray;
+    border-radius: 50%;
+    opacity: 0.5;
+    top: -8px;
+    left: -9px;
+    animation: cursorAnim2 0.5s alternate infinite;
+}
+
+@keyframes cursorAnim {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(0.7);
+    }
+}
+
+@keyframes cursorAnim2 {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(0.4);
+    }
+}
+
+@keyframes cursorAnim3 {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(3);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+.expand {
+    animation: cursorAnim3 0.5s alternate infinite;
+    border: 1px solid red;
+}
